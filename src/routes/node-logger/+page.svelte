@@ -4,6 +4,7 @@
     import {FigmaMessageProxy} from "$lib/FigmaMessageProxy";
     import FigmaEmbed from "$lib/FigmaEmbed.svelte";
     import FigmaNodeLogger from "./FigmaNodeLogger";
+    import FigmaMessageLogger from "$lib/FigmaMessageLogger";
 
     // 撰写自定义逻辑……
     let nodeLogger = new FigmaNodeLogger(Update);
@@ -17,7 +18,7 @@
     const project = new FigmaProject('8Pk11wPp1ZJCgcxJzNkgwR', '39-210');
 
     // 把需要接受 Figma 信息的自定义逻辑列在这里：
-    const proxy = new FigmaMessageProxy([nodeLogger]);
+    const proxy = new FigmaMessageProxy([nodeLogger, new FigmaMessageLogger()]);
 
     // 管理生命周期，照抄即可：
     onMount(() =>

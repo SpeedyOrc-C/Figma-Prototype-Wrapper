@@ -1,6 +1,6 @@
 export class SerialHttpDaemon
 {
-    constructor(public readonly Port: number)
+    constructor(public readonly Port: number = 50001)
     {
     }
 
